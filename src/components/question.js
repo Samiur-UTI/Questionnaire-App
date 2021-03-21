@@ -1,12 +1,14 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
 import { makeStyles,Card,CardContent,Typography,Container } from '@material-ui/core';
+import Options from './options';
 const useStyles = makeStyles({
     root: {
       minWidth: 500,
       minHeight:300,
       backgroundColor: 'rgb(96, 120, 153)',
-      borderRadius : '2em'
+      borderRadius : '2em',
+      borderStyle: 'inset'
      },
     title: {
       fontSize: 35,
@@ -31,6 +33,7 @@ export default function Question() {
                     <Typography className={classes.body} variant="body2" component="p">
                         Real Question
                     </Typography>
+                    <Options/>
                 </CardContent>
             </Card>
         </Container>
