@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 export default function Question() {
     const classes = useStyles();
     return (
-        <Container maxWidth='inherit'>
+        <Container maxWidth='lg'>
             <Card className={classes.root}>
               <CardContent>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
