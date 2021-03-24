@@ -1,39 +1,47 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
-import { makeStyles,Card,CardContent,Typography,Container } from '@material-ui/core';
+import { makeStyles,Card,CardContent,Typography,Container,Grid } from '@material-ui/core';
 import Options from './options';
 const useStyles = makeStyles({
     root: {
-      minWidth: 500,
-      minHeight:300,
-      backgroundColor: 'rgb(96, 120, 153)',
+      minWidth: 100,
+      minHeight: 400,
+      backgroundColor: '#2E5894',
       borderRadius : '2em',
-      borderStyle: 'inset'
+      marginTop:'5%',
+      borderStyle: 'inset',
+      boxShadow: '5px 5px 5px 5px #58427C'
      },
     title: {
       fontSize: 35,
-      fontFamily: 'aerial',
-      marginLeft: 350,
-      color: 'rgb(37, 4, 46)'
+      fontFamily: 'roboto',
+      color: 'rgb(37, 4, 46)',
+      display: 'flex',
+      justifyContent: 'center'
     },
     body: {
-        marginLeft: 350,
-        fontSize: 25
+        marginLeft: 50,
+        fontSize: 25,
+        display: 'flex',
+        justifyContent: 'center'
     }
   });
 export default function Question() {
     const classes = useStyles();
     return (
-        <Container maxWidth='lg'>
-            <Card className={classes.root}>
+        <Container className={classes.section} maxWidth='lg'>
+            <Card variant='outlined' className={classes.root}>
               <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                    <em>Question 1</em>
-                    </Typography>
-                    <Typography className={classes.body} variant="body2" component="p">
-                        Real Question
-                    </Typography>
-                    <Options/>
+                    <Grid container>
+                        <Grid item sm={12} md={6} lg={6}>
+                          <Typography className={classes.title} color="textSecondary" gutterBottom>
+                              <em>Question 1</em>
+                          </Typography>
+                        </Grid>
+                        <Grid item sm={12} md={6} lg={6}>
+                            <Options/>
+                        </Grid>
+                      </Grid>
                 </CardContent>
             </Card>
         </Container>

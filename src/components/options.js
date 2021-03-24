@@ -1,12 +1,10 @@
 import React from 'react';
-import {options} from '../tempStorage/storage';
 import { makeStyles,Grid} from '@material-ui/core';
 import 'fontsource-roboto';
 import Option from '../components/option';
 const useStyles = makeStyles((theme) => ({
     root: {
-      justifyContent: 'center',
-      
+      justifyContent: 'center'
     },
     content: {
         textAlign:'justify',
@@ -16,11 +14,18 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-evenly'
     }
   }));
+const roughStyle = () => {
+    return (
+        {
+            borderRadius:20,
+            background: '#009DC4'
+        }
+    )
+}
 export default function Options() {
-    const items = options();
     const classes = useStyles();
     return (
-       <div style ={{borderRadius: 20}} className='ui segment ui container'>
+       <div style ={roughStyle()} className='ui segment ui container'>
                <Grid container className={classes.root}>
                    <Grid className={classes.items} item md={6} sm={12} lg={4}>
                         <Option/>
