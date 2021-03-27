@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     root: {
       minWidth: 100,
       minHeight: 400,
-      backgroundColor: '#2E5894',
+      backgroundColor: '#009DC4',
       borderRadius : '2em',
       marginTop:'5%',
       borderStyle: 'inset',

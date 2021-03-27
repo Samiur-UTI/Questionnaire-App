@@ -18,7 +18,7 @@ const roughStyle = () => {
     return (
         {
             borderRadius:20,
-            background: '#009DC4'
+            background: '#47d1ff'
         }
     )
 }

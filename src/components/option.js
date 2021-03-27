@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     root:{
         display: 'inline-flex',
         margin: '5px 5px 5px 5px',
-        color: 'rgb(103, 230, 213)'
+        color: '#0b275b'
     }
 })
 export default function Option() {
