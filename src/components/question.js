@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     root: {
       minWidth: 100,
       minHeight: 400,
-      backgroundColor: '#009DC4',
+      background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,157,196,1) 0%, rgba(71,209,255,1) 100%);',
       borderRadius : '2em',
       marginTop:'5%',
       borderStyle: 'inset',
