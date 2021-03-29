@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{useRef,useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import { makeStyles,Card,CardContent,Typography,Container,Grid } from '@material-ui/core';
 import Options from './options';
+import {TweenLite, Power2, TimelineLite} from 'gsap';
 const useStyles = makeStyles({
     root: {
       minWidth: 100,
@@ -28,9 +29,20 @@ const useStyles = makeStyles({
   });
 export default function Question() {
     const classes = useStyles();
+    let content = useRef(null);
+    useEffect(() => {
+      TweenLite.fromTo(content,1.5,{
+        y: 50,
+        opacity: 0.2,
+        ease: Power2.easeIn
+      },{
+        y:-10,
+        opacity:1
+      })
+    },[])
     return (
         <Container className={classes.section} maxWidth='lg'>
-            <Card variant='outlined' className={classes.root}>
+            <Card ref={el => {content = el}} variant='outlined' className={classes.root}>
               <CardContent>
                     <Grid container>
                         <Grid item sm={12} md={6} lg={6}>
