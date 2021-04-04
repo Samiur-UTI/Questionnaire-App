@@ -1,6 +1,6 @@
-import React,{useRef,useEffect} from 'react';
+import React,{useState,useRef,useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import { makeStyles,Card,CardContent,Typography,Container,Grid } from '@material-ui/core';
+import { makeStyles,Card,CardContent,Typography,Container,Grid,Fade } from '@material-ui/core';
 import Options from './options';
 import {TweenLite, Power2, TimelineLite} from 'gsap';
 const useStyles = makeStyles({
@@ -15,7 +15,7 @@ const useStyles = makeStyles({
      },
     title: {
       fontSize: 35,
-      fontFamily: 'roboto',
+      fontFamily: 'BlinkMacSystemFont',
       color: 'rgb(37, 4, 46)',
       display: 'flex',
       justifyContent: 'center'
@@ -30,15 +30,21 @@ const useStyles = makeStyles({
 export default function Question() {
     const classes = useStyles();
     let content = useRef(null);
+    let que = useRef(null);
+    const [mounted, setmounted] = useState(false);
     useEffect(() => {
-      TweenLite.fromTo(content,1.5,{
-        y: 50,
-        opacity: 0.2,
-        ease: Power2.easeIn
-      },{
-        y:-10,
-        opacity:1
-      })
+      async function animate (){
+        await TweenLite.fromTo(content,1.5,{
+            y: 50,
+            opacity: 0.2,
+            ease: Power2.easeIn
+          },{
+            y:-10,
+            opacity:1
+          });
+        setmounted(true);
+      }
+      animate();
     },[])
     return (
         <Container className={classes.section} maxWidth='lg'>
@@ -46,9 +52,11 @@ export default function Question() {
               <CardContent>
                     <Grid container>
                         <Grid item sm={12} md={6} lg={6}>
-                          <Typography className={classes.title} color="textSecondary" gutterBottom>
-                              <em>Question 1</em>
-                          </Typography>
+                          <Fade in={mounted}>
+                            <Typography ref={el => {que = el}} className={classes.title} color="textSecondary" gutterBottom>
+                                <em>Question 1</em>
+                            </Typography>
+                          </Fade>
                         </Grid>
                         <Grid item sm={12} md={6} lg={6}>
                             <Options/>
