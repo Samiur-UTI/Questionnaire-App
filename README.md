@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##APP TODOS
+1. Induct Redux 
+    a. State will have the questions and options
+    b. On picking an option state will change (question and options)
+2. React-Router 
+    a. Decide upon when and how to use the router
+3. WordPress REST API
+    a. Induce the content of state from wp-rest-api
+    b. Make it CRUD able (admin)

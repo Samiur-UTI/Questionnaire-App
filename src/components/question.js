@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import { makeStyles,Card,CardContent,Typography,Container,Grid,Fade } from '@material-ui/core';
 import Options from './options';
-import {TweenLite, Power2, TimelineLite} from 'gsap';
+import {TweenLite, Power2} from 'gsap';
 const useStyles = makeStyles({
     root: {
       minWidth: 100,
@@ -30,7 +30,6 @@ const useStyles = makeStyles({
 export default function Question() {
     const classes = useStyles();
     let content = useRef(null);
-    let que = useRef(null);
     const [mounted, setmounted] = useState(false);
     useEffect(() => {
       async function animate (){
@@ -53,7 +52,7 @@ export default function Question() {
                     <Grid container>
                         <Grid item sm={12} md={6} lg={6}>
                           <Fade in={mounted}>
-                            <Typography ref={el => {que = el}} className={classes.title} color="textSecondary" gutterBottom>
+                            <Typography className={classes.title} color="textSecondary" gutterBottom>
                                 <em>Question 1</em>
                             </Typography>
                           </Fade>
